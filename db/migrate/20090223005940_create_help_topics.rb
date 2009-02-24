@@ -10,7 +10,7 @@ class CreateHelpTopics < ActiveRecord::Migration
     
     add_index :help_topics, :permalink
     add_index :help_topics, [:active, :permalink]
-    add_index :help_topics, :help_category_id
+    add_index :help_topics, [:help_category_id, :active]
   end
 
   def self.down

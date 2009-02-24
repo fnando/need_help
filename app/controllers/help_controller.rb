@@ -4,7 +4,7 @@ class HelpController < ApplicationController
   end
   
   def show
-    @category = HelpCategory.find_by_permalink!(params[:permalink], true)
+    @category = HelpCategory.find_by_permalink!(params[:permalink], :conditions => {:active => true})
     @topics   = @category.topics.active
   end
 end
