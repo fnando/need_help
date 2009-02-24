@@ -1,0 +1,18 @@
+<h2 id="index"><%= @category.title %></h2>
+
+<ul class="topics">
+	<% for topic in @topics %>
+		<li><%= link_to topic.title, :anchor => topic.permalink %></li>
+	<% end %>
+</ul>
+
+<% for topic in @topics %>
+	<div class="help">
+		<h3 id="<%= topic.permalink %>"><%= topic.title %></h3>
+		<%= topic.formatted_content %>
+		
+		<p class="top">
+			<%= link_to I18n.translate(:back_to_top), "#index" %>
+		</p>
+	</div>
+<% end %>
