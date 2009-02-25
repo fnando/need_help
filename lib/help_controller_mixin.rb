@@ -17,7 +17,13 @@ module HelpControllerMixin
     }
     
     respond_to do |wants|
-      wants.html { redirect_to help_category_path(@topic.category, :anchor => @topic.permalink), :status => :moved_permanently }
+      wants.html { 
+        if request.xhr?
+          render :html => content_tag(:h3, @topic.name) + @topic.formatted_content
+        else
+          redirect_to help_category_path(@topic.category, :anchor => @topic.permalink), :status => :moved_permanently
+        end
+      }
       wants.json { render :text => data.to_json }
       wants.xml  { render :xml  => data.to_xml }
     end
