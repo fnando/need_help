@@ -19,8 +19,7 @@ module HelpControllerMixin
     respond_to do |wants|
       wants.html { 
         if request.xhr?
-          render :html => content_tag(:h3, @topic.title) + 
-                          content_tag(:div, @topic.formatted_content, :class => "content")
+          render :layout => false
         else
           redirect_to help_category_path(@topic.category, :anchor => @topic.permalink), :status => :moved_permanently
         end
