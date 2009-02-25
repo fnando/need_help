@@ -1,4 +1,4 @@
-<h2 id="index"><%= @category.title %></h2>
+<h2 id="topics"><%= @category.title %></h2>
 
 <ul class="topics">
 	<% for topic in @topics %>
@@ -12,7 +12,7 @@
 		<%= topic.formatted_content %>
 		
 		<p class="top">
-			<%= link_to I18n.translate(:back_to_top), "#index" %>
+			<%= link_to I18n.translate(:back_to_top), "#topics" %>
 		</p>
 	</div>
 <% end %>

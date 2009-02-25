@@ -30,12 +30,31 @@ Usage
 
 6) This plugin has two dependencies: <http://github.com/fnando/has_permalink> and <http://github.com/fnando/has_markup>.
 
+### Routes
+
+This plugins adds 3 routing paths:
+
+* `/help`: the main help page
+* `/help/[category permalink]`: the whole help category page
+* `/help/v/[topic permalink]`: the topic page. This action accepts 3 formats: `xml`, `json` and `html`; note that the `html` format will redirect to the category page unless `request.xhr?` returns `true`, which in this case will render the `show.erb.html` template.
+
+If you want to override/localize the routing, use the following snippet (which is added by the plugin):
+
+	map.with_options :controller => "help" do |url|
+      url.help                "/help", :action => "index"
+      url.help_page           "/help/v/:permalink", :action => "show"
+      url.formatted_help_page "/help/v/:permalink.:format", :action => "show"
+      url.help_category       "/help/:permalink", :action => "by_category"
+    end
+
+As you can see, you have some named routings.
+
 Customization
 -------------
 
 To customize the view, just create two views at `app/views/help/index.erb.html` and `app/views/help/show.erb.html`. There's three instance variables: `@categories`, `@category` and `@topics`, depending on the view you're working.
 
-You need to set two keys for your locale file:
+You need to set two keys for your locale file (`config/locales/en.yml`):
 
 	en:
 	  back_to_top: "Back to top"

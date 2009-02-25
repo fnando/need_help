@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + "/../../../../config/environment"
+require File.expand_path(File.dirname(__FILE__) + "/../../../../config/environment")
 
 namespace :help do
   desc "Sync extra files from help plugin"
