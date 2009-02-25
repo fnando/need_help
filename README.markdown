@@ -125,6 +125,11 @@ TODO
 
 * Write specs
 
+Running specs
+-------------
+
+Create a new project with Rails 2.3, install the plugin and its dependencies and run the command `ruby vendor/plugins/need_help/spec/need_help_spec.rb -c` from  the project's root.
+
 License
 -------
 

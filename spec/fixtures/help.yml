@@ -1,0 +1,11 @@
+"General":
+  "What's required to use this service?": requirements.textile
+  "Is there a premium account?": premium.textile
+  "Is our data backed up in case of an emergency?": backup.textile
+  "How does your refund policy work?": refund.textile
+  "Can I delete items from the Dashboard or Overview?": dashboard.textile
+  "What is SSL?": ssl.textile
+"Feedback":
+  "How can I send suggestions?": suggestions.textile
+  "I found a bug. What should I do?": bug.textile
+  "I have a billing problem. Is there a phone that I can call?": billing.textile

@@ -1,0 +1,1 @@
+Items on the Dashboard or Overview are generated automatically from recent activity so there’s no way to prevent them from showing up or removing ones that are there. They cycle off when new items are added.

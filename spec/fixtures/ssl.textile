@@ -1,0 +1,1 @@
+SSL is an acronym for "Secure Socket Layer", a security protocol that provides communications privacy over the Internet. 

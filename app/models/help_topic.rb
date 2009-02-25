@@ -18,10 +18,6 @@ class HelpTopic < ActiveRecord::Base
     permalink
   end
   
-  def page_view!
-    update_attribute :views, views + 1
-  end
-  
   def self.import!
     config.each do |category_name, questions|
       category = HelpCategory.find_or_create_by_title(category_name)
@@ -40,6 +36,6 @@ class HelpTopic < ActiveRecord::Base
   end
   
   def self.config
-    @config ||= YAML.load_file(CONFIG)
+    @_help_config ||= YAML.load_file(CONFIG)
   end
 end

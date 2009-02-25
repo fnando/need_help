@@ -1,0 +1,1 @@
+We have two account types: free and premium. The premium account costs only $3/month and gives access to all advanced features.

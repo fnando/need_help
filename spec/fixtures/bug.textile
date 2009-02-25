@@ -1,0 +1,1 @@
+Send the bug description and how can we reproduce it to <bugs@example.com>. Send your browser and OS version if possible.

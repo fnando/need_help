@@ -1,0 +1,1 @@
+Data is backed up nightly and written to multiple disks instantly. We can perform full backup recovery in the event of a system-wide emergency. Our hardware is also fully redundant so even if one disk or server fails nothing will be lost and the system will not go down. Our uptime is over 99%.
