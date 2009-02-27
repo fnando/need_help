@@ -8,7 +8,9 @@ class HelpTopic < ActiveRecord::Base
   
   # plugins
   has_permalink :title
-  has_markup    :content, :format => :textile
+  has_markup    :content,
+    :format   => :textile,
+    :sanitize => false
   
   # scopes
   named_scope :active, :conditions => {:active => true}
