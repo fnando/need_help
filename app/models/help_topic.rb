@@ -13,8 +13,8 @@ class HelpTopic < ActiveRecord::Base
     :sanitize => false
   
   # scopes
-  named_scope :active, :conditions => {:active => true}
-  named_scope :inactive, :conditions => {:active => false}
+  named_scope :active, :conditions => {:active => true}, :order => "title asc"
+  named_scope :inactive, :conditions => {:active => false}, :order => "title asc"
   
   def to_param
     permalink

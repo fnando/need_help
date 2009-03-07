@@ -9,14 +9,19 @@ describe "need help plugin" do
   end
   
   it "should override constants" do
-    HelpTopic::CONFIG.should == File.dirname(__FILE__) + "/fixtures/help.yml"
-    HelpTopic::HELP_DIR.should == File.dirname(__FILE__) + "/fixtures"
+    HelpTopic::CONFIG.should == File.expand_path(File.dirname(__FILE__) + "/fixtures/help.yml")
+    HelpTopic::HELP_DIR.should == File.expand_path(File.dirname(__FILE__) + "/fixtures")
   end
   
   describe HelpCategory do
     it "should return active topics" do
       HelpCategory.first.update_attribute(:active, false)
       HelpCategory.active.count.should == 1
+    end
+    
+    it "should be sorted by title" do
+      HelpCategory.active.proxy_options[:order].should == "title asc"
+      HelpCategory.inactive.proxy_options[:order].should == "title asc"
     end
     
     it "should return inactive topics" do
@@ -48,6 +53,11 @@ describe "need help plugin" do
     it "should return active topics" do
       HelpTopic.first.update_attribute(:active, false)
       HelpTopic.active.count.should == 8
+    end
+    
+    it "should be sorted by title" do
+      HelpTopic.active.proxy_options[:order].should == "title asc"
+      HelpTopic.inactive.proxy_options[:order].should == "title asc"
     end
     
     it "should return inactive topics" do

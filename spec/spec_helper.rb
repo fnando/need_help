@@ -20,8 +20,8 @@ Spec::Runner.configure do |config|
 end
 
 silence_warnings do
-  HelpTopic::HELP_DIR = File.dirname(__FILE__) + "/fixtures"
-  HelpTopic::CONFIG = File.dirname(__FILE__) + "/fixtures/help.yml"
+  HelpTopic::HELP_DIR = File.expand_path(File.dirname(__FILE__) + "/fixtures")
+  HelpTopic::CONFIG   = HelpTopic::HELP_DIR + "/help.yml"
 end
  
 class Object
