@@ -3,7 +3,7 @@
 		<h2><%= link_to category.title, help_category_path(category) %></h2>
 
 		<ul class="topics">
-			<% for faq in category.topics.active.all(:limit => 5) %>
+			<% for faq in category.topics.summary %>
 				<li>
 					<%= link_to faq.title, help_category_path(category, :anchor => faq.permalink) %>
 				</li>

@@ -15,6 +15,7 @@ class HelpTopic < ActiveRecord::Base
   # scopes
   named_scope :active, :conditions => {:active => true}, :order => "title asc"
   named_scope :inactive, :conditions => {:active => false}, :order => "title asc"
+  named_scope :summary, :conditions => {:active => true}, :limit => 5, :order => "title asc"
   
   def to_param
     permalink

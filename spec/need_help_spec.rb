@@ -60,6 +60,13 @@ describe "need help plugin" do
       HelpTopic.inactive.proxy_options[:order].should == "title asc"
     end
     
+    it "should return summary" do
+      options = HelpTopic.summary.proxy_options
+      options[:conditions].should == {:active => true}
+      options[:order].should == "title asc"
+      options[:limit].should == 5
+    end
+    
     it "should return inactive topics" do
       HelpTopic.first.update_attribute(:active, false)
       HelpTopic.inactive.count.should == 1

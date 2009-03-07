@@ -8,6 +8,7 @@ class CreateHelpCategories < ActiveRecord::Migration
     
     add_index :help_categories, :permalink
     add_index :help_categories, [:active, :permalink]
+    add_index :help_topics, [:active, :permalink, :title]
   end
 
   def self.down
